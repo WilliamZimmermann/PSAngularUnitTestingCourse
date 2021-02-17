@@ -26,14 +26,13 @@ describe("HeroService", () => {
         service = TestBed.inject(HeroService);
     });
 
-    describe('hetHero', () => {
+    describe('getHero', () => {
 
         it('should call get with the correct URL', () => {
             service.getHero(4).subscribe();
 
             const request = httpTestingController.expectOne('api/heroes/4');
             request.flush({id: 4, name: 'SuperDude', strength: 100});
-
         });
     });
 });
